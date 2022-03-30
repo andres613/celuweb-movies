@@ -20,6 +20,14 @@ class Movies {
         return $movieGenres;
     }
 
+    public function getMovies() {
+        $db = new Connection();
+        $movies = $db->dbResponse("SELECT * FROM Movies m LEFT JOIN Genres g ON m.genre_id = g.id");
+        $db->close();
+        unset($db);
+        return $movies;
+    }
+
 }
 
 ?>

@@ -37,5 +37,26 @@ $moviesInstance = new Movies();
             </ul>
         </nav>
     </header>
+        <ul class='grid'>
+            <?php 
+            $movies = $moviesInstance->getMovies();
+
+            foreach($movies as $key=>$value) {
+                print "<li class='card'>";
+                print "<a href='#'>";
+                print "<img class='cardImage' src='img/".$movies[$key]['image_path']."' width=200 height=250 alt='' />";
+                print "</div>";
+                print "</a>";
+                print "<div class='card-footer'>";
+                print "<div><label>Título: </label><span class='cardTitle'><strong>".$movies[$key]['title']."</strong></span></div>";
+                print "<div><label>Clasificación: <label><span class='card-type'>".$movies[$key]['genre_movie']."</span></div>";
+                print "</div>";
+                print "<div class='card-button'>";
+                print "<input type='button' class='buyButton' value='Alquilar'></button>";
+                print "</li>";
+            }
+            
+            ?>
+        </ul>
 </body>
 </html>

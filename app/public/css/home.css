@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* NAVBAR STYLES */
 .logo {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
     font-size: 2rem;
@@ -117,4 +118,64 @@
         outline: none;
     }
 
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* MOVIES GRID STYLES */
+
+.grid {
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 230px);
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    padding: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    list-style: none;
+    text-align: center;
+}
+
+.cardImage:hover {
+    opacity: 0.8;
+}
+
+.cardTitle {
+    font-size: 1rem;
+}
+
+.cardImage {
+    border-radius: 10px;
+    background-color: azure;
+}
+
+.buyButton {
+    background-color: green;
+    border-radius: 15px 5px;
+    width: 100%;
+    font-size: 1rem;
+    color: white;
+    font-weight: 600;
+}
+
+.buyButton:hover {
+    background-color: blue;
+}
+
+label {
+    color: gray;
+}
+
+@media (max-width: 560px) {
+    .grid {
+        grid-template-columns: 100%
+    }
+    .cardImage {
+        width: 90%;
+        height: auto;
+    }
 }
