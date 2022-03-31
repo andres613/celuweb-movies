@@ -37,7 +37,7 @@ ENGINE=InnoDB
 DEFAULT CHARSET=latin1
 COLLATE=latin1_swedish_ci;
 
-/* INTERTS */
+/* INSERTS */
 
 /* INSERT INTO celuweb_database.Genres (`genre_movie`) VALUES ("Acción"),("Terror"),("Comedia"),("Ficción"),("Drama"); */
 
@@ -55,7 +55,7 @@ INSERT INTO Movies (
 VALUES 
     (
         1,
-        2,
+        1,
         "the_batman.jpg",
         "The Batman",
         "Después de dos años acechando por las calles de la ciudad como Batman (Robert Pattinson), e infundiendo miedo en las mentes perversas de los criminales, Bruce Wayne está sumido en las profundidades de las sombras de Gotham City. Este vigilante solitario cuenta con pocos aliados de confianza y eso le ha llevado a convertirse en la única encarnación de la venganza entre sus conciudadanos. Cuando un asesino apunta a la élite de Gotham con una serie de maquinaciones sádicas, un rastro de pistas crípticas lleva al \"mejor detective del mundo\" a realizar una investigación en el inframundo.",
@@ -64,7 +64,7 @@ VALUES
     ),
     (
         2,
-        1,
+        2,
         "huye.jpg",
         "Huye",
         "Un joven afroamericano visita a la familia de su novia blanca, un matrimonio adinerado. Para Chris (Daniel Kaluuya) y su novia Rose (Allison Williams) ha llegado el momento de conocer a los futuros suegros, por lo que ella le invita a pasar un fin de semana en el campo con sus padres, Missy (Catherine Keener) y Dean (Bradley Whitford). Al principio, Chris piensa que el comportamiento \"demasiado\" complaciente de los padres se debe a su nerviosismo por la relación interracial de su hija, pero a medida que pasan las horas, una serie de descubrimientos cada vez más inquietantes le llevan a descubrir una verdad inimaginable.",
