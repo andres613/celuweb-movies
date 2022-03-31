@@ -2,7 +2,9 @@
 
 require("../helpers/DBConnection.php");
 require("./class/Movies.php");
+require("./class/MoviesService.php");
 $moviesInstance = new Movies();
+$moviesServiceInstance = new MoviesService();
 
 ?>
 <!DOCTYPE html>
@@ -42,14 +44,17 @@ $moviesInstance = new Movies();
             $movies = $moviesInstance->getMovies();
 
             foreach($movies as $key=>$value) {
+                $typePrice = $moviesServiceInstance->calculateMovieRent( $movies[$key]['release_date'] );
                 print "<li class='card'>";
+                print "<div><strong style='color:yellow'>".$typePrice[0]."</strong></div>";
                 print "<a href='#'>";
                 print "<img class='cardImage' src='img/".$movies[$key]['image_path']."' width=200 height=250 alt='' />";
                 print "</div>";
                 print "</a>";
                 print "<div class='card-footer'>";
                 print "<div><label>Título: </label><span class='cardTitle'><strong>".$movies[$key]['title']."</strong></span></div>";
-                print "<div><label>Clasificación: <label><span class='card-type'>".$movies[$key]['genre_movie']."</span></div>";
+                print "<div><label>Clasificación: <label><strong>".$movies[$key]['genre_movie']."</strong></div>";
+                print "<div><label>Precio: <label><span class='card-type'>$".$typePrice[1]."</span></div>";
                 print "</div>";
                 print "<div class='card-button'>";
                 print "<input type='button' class='buyButton' value='Alquilar'></button>";
