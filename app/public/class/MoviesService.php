@@ -2,6 +2,8 @@
 
 class MoviesService {
 
+    private $total;
+
     public function __construct(){}
 
     public function calculateMovieRent ( $releaseDate ) {
@@ -29,6 +31,29 @@ class MoviesService {
         $differenceInYears = $interval->format("%y")*12;
         $totalDifferenceMonths = $differenceInMonths + $differenceInYears;
         return $totalDifferenceMonths;
+    }
+
+    public function totalRent ( $movieData, $numberDays ) {
+        $items = json_decode($movieData, true);
+        if( $items['type'] == "Nueva" ){
+            $this->total = $this->total + $items['price'] * $numberDays;
+        } elseif( $items['type'] == "Normal" ){
+            if( $numberDays <= 3 ) {
+                $this->total = $this->total + $items['price'] * $numberDays;
+            } else {
+                $this->total = $this->total + $items['price'] * $numberDays + ($items['price'] * 15/100)($numberDays-3);
+            }
+        }elseif( $numberDays <= 5 ){
+            $this->total = $this->total + $items['price'] * $numberDays;
+        } else {
+            $this->total = $this->total + $items['price'] * $numberDays + ($items['price'] * 10/100)($numberDays-5);
+        }
+        $_SESSION["total"] = $_SESSION["total"] + $this->total;
+        print $_SESSION["total"];
+    }
+
+    public function getTotal() {
+        /* return $_SESSION["total"]; */
     }
 
 }
