@@ -22,7 +22,7 @@ class Movies {
 
     public function getMovies() {
         $db = new Connection();
-        $movies = $db->dbResponse("SELECT * FROM Movies m LEFT JOIN Genres g ON m.genre_id = g.id");
+        $movies = $db->dbResponse("SELECT m.id, m.user_id, m.genre_id, m.image_path, m.title, m.overview, m.release_date, m.in_existence, g.genre_movie FROM Movies m LEFT JOIN Genres g ON m.genre_id = g.id");
         $db->close();
         unset($db);
         return $movies;
