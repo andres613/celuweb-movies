@@ -1,0 +1,80 @@
+.rental-popup {
+    background-color: #edeef6;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    border-radius: 50%;
+}
+
+.cart-button {
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-rent-button, #rental-close-button, #modal-cancel-button {
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 14px;
+    padding: 5px 5px;
+}
+
+#modal-rent-button, #rental-close-button {
+    background-color: #47a386;
+}
+
+#modal-cancel-button {
+    background-color: red;
+}
+
+.rental-modal-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;  
+    top: 0;
+    right: 0;
+    transition: opacity 0.3s ease;
+}
+
+.show {
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.header .nav #rental-cart {
+    background: none;
+    border: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header .nav #rental-cart img {
+    border-radius: 50%;
+}
+
+.rental-modal {
+    color: white;
+    width: 300px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.rental-modal h1 {
+    margin: 0;
+}
+
+.rental-modal p {
+    opacity: 0.7;
+    font-size: 14px;
+}
